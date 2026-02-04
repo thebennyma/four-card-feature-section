@@ -1,0 +1,151 @@
+:root {
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --bg: hsl(0, 0%, 98%);
+
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --white: hsl(0, 0%, 100%);
+
+  --ff-body: "Poppins", sans-serif;
+  --font-size: 15px;
+
+  --radius: 12px;
+  --shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--font-size);
+  background: var(--bg);
+  color: var(--grey-500);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 72px 24px 40px;
+  display: grid;
+  place-items: start center;
+}
+
+.hero {
+  max-width: 560px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.hero__kicker {
+  margin: 0;
+  font-weight: 200;
+  font-size: clamp(24px, 2.5vw, 34px);
+  letter-spacing: 0.2px;
+  color: var(--grey-500);
+}
+
+.hero__title {
+  margin: 8px 0 16px;
+  font-weight: 600;
+  font-size: clamp(24px, 2.7vw, 36px);
+  color: var(--grey-500);
+}
+
+.hero__desc {
+  margin: 0 auto;
+  max-width: 520px;
+  line-height: 1.6;
+  color: var(--grey-400);
+}
+
+.features {
+  width: min(1100px, 100%);
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 24px;
+  border-top: 4px solid transparent;
+
+  display: grid;
+  gap: 10px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card__desc {
+  margin: 0;
+  color: var(--grey-400);
+  line-height: 1.6;
+  font-size: 13px;
+  max-width: 34ch;
+}
+
+.card__icon {
+  margin-top: 24px;
+  justify-self: end;
+  width: 56px;
+  height: 56px;
+}
+
+.card--cyan { border-top-color: var(--cyan); }
+.card--red { border-top-color: var(--red); }
+.card--orange { border-top-color: var(--orange); }
+.card--blue { border-top-color: var(--blue); }
+
+@media (min-width: 1000px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+  }
+
+  .card--cyan   { grid-column: 1; grid-row: 2 / span 2; }
+  .card--red    { grid-column: 2; grid-row: 1 / span 2; }
+  .card--orange { grid-column: 2; grid-row: 3 / span 2; }
+  .card--blue   { grid-column: 3; grid-row: 2 / span 2; }
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+.attribution {
+  font-size: 12px;
+  color: var(--grey-400);
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--grey-500);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
